@@ -1,0 +1,18 @@
+{
+  "name": "penn-course-materials",
+  "version": "1.0.0",
+  "description": "A collection of course materials from past years",
+  "main": "server.js",
+  "scripts": {
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DeepanS206/PennCourseMaterials.git"
+  },
+  "author": "Deepan Saravanan, Visakh Nair",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DeepanS206/PennCourseMaterials/issues"
+  },
+  "homepage": "https://github.com/DeepanS206/PennCourseMaterials#readme"
+}
