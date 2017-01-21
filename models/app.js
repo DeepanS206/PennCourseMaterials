@@ -63,21 +63,24 @@ var insertUser = function(record, db, callback) {
       console.log("sumting wong");
       callback(err, null);
     } else {
+      console.log('adding one user good');
       callback(false, r);
     }
   });
 };
 
-module.exports {
+module.exports = {
   addUser: function(username, pw, fullname, email, callback) {
     MongoClient.connect(url, function(err, db) {
       assert.equal(null, err);
       console.log("Connected correctly to server");
       doc = {'username':username, 'pw':pw, 'fullname':fullname, 'email':email};
+      console.log(data);
       insertUser(doc, db, function(err, r) {
         if (err) {
           callback(err, null);
         } else {
+          console.log('success');
           callback(r);
         }
       });
