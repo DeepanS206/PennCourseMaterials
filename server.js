@@ -1,6 +1,7 @@
 var express = require('express');
 var http = require('http');
 var bodyParser = require('body-parser'); 
+var cookieSession = require('cookie-session'); 
 var mongodb = require('./models/app.js'); 
 var app = express();
 
@@ -22,6 +23,10 @@ app.use(express.static(__dirname + '/public'));
 
 app.get('/home/:fullname', function(req, res) {
   res.render('home.ejs', {'data': req.params.fullname});
+});
+
+app.get('/addCourse', function(req, res) {
+
 });
 
 app.post('/login', function(req, res) {
