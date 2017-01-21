@@ -3,8 +3,7 @@
   "version": "1.0.0",
   "description": "A collection of course materials from past years",
   "main": "server.js",
-  "scripts": {
-  },
+  "scripts": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/DeepanS206/PennCourseMaterials.git"
@@ -14,5 +13,8 @@
   "bugs": {
     "url": "https://github.com/DeepanS206/PennCourseMaterials/issues"
   },
-  "homepage": "https://github.com/DeepanS206/PennCourseMaterials#readme"
+  "homepage": "https://github.com/DeepanS206/PennCourseMaterials#readme",
+  "dependencies": {
+    "express": "^4.14.0"
+  }
 }
