@@ -21,7 +21,18 @@ app.use(express.static(__dirname + '/public'));
   reg_fullname: '' }*/
 
 app.get('/home/:fullname', function(req, res) {
-  res.render('home.ejs', {'data': fullname});
+  res.render('home.ejs', {'data': req.params.fullname});
+});
+
+app.post('/login', function(req, res) {
+  mongodb.authenticate(req.body.lg_username, req.body.lg_password, function(err, name) {
+    if (!err) {
+      var queryStr = '/home/' + name;
+      res.redirect(queryStr);
+    } else {
+      res.redirect('/');
+    }
+  });
 });
 
 app.post('/addUser', function(req, res) {

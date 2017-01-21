@@ -69,20 +69,40 @@ var insertUser = function(record, db, callback) {
   });
 };
 
+var findUser = function(record, db, callback) {
+  var users = db.collection('users');
+  users.findOne(record, function(err, r) {
+    console.log(r);
+    callback(r['fullname']);
+  });
+};
+
 module.exports = {
   addUser: function(username, pw, fullname, email, callback) {
     MongoClient.connect(url, function(err, db) {
       assert.equal(null, err);
       console.log("Connected correctly to server");
       doc = {'username':username, 'pw':pw, 'fullname':fullname, 'email':email};
-      console.log(data);
+      console.log(doc);
       insertUser(doc, db, function(err, r) {
         if (err) {
           callback(err, null);
         } else {
           console.log('success');
-          callback(r);
+          db.close();
+          callback(false, r);
         }
+      });
+    });
+  },
+  authenticate: function(username, password, callback) {
+    MongoClient.connect(url, function(err, db) {
+      assert.equal(null, err);
+      console.log("Connected correctly to server");
+      doc = {username: username, pw: password};
+      findUser(doc, db, function(r) {
+        db.close();
+        callback(false, r);
       });
     });
   }
