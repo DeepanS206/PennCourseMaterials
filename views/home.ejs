@@ -27,23 +27,6 @@
     <script type="text/javascript" src="/js/card-depth.js"></script>
     <script type="text/javascript">
 
-    var getRecentEvent = function () {
-        $.ajax({
-            type: 'GET',
-            url: 'http://localhost:8080/getRecentEvent',
-            success: function (data) {
-                if (data) {
-                    console.log(data); 
-                } else {
-                    console.log('something went wrong');
-                    //console.log(err); 
-                }
-            }
-        });
-    };
-
-    window.onload = getRecentEvent; 
-
         var populateDiv = function (data) {
             $('.search-results').html(''); 
             //console.log(data.length); 
@@ -141,7 +124,7 @@
                     </div>
                     <div class="form-group">
                         <input id="search" type="text" class="form-control" placeholder="Search">
-                        <script type="text/javascript">
+                        <!--script type="text/javascript">
                             $('#search').keyup(function () {
                                 console.log('keyup event registered'); 
                                 var query = $('#search').val(); 
@@ -162,7 +145,7 @@
                                     }
                                 }); 
                             }); 
-                        </script>
+                        </script-->
                     </div>
                 </div>
             </div>

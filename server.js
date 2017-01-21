@@ -20,8 +20,8 @@ app.use(express.static(__dirname + '/public'));
   reg_email: '',
   reg_fullname: '' }*/
 
-app.get('/home', function(req, res) {
-  res.render('home.ejs');
+app.get('/home/:fullname', function(req, res) {
+  res.render('home.ejs', {'data': fullname});
 });
 
 app.post('/addUser', function(req, res) {
@@ -30,7 +30,8 @@ app.post('/addUser', function(req, res) {
     req.body.reg_password, req.body.reg_fullname, 
     req.body.reg_email, function(err, r) {
       if (!err) {
-        res.redirect('/home');
+        var queryStr = '/home/' + req.body.reg_fullname;
+        res.redirect(queryStr);
       }
     });
   } else {
