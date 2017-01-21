@@ -16,6 +16,7 @@
   "homepage": "https://github.com/DeepanS206/PennCourseMaterials#readme",
   "dependencies": {
     "ejs": "^2.5.5",
-    "express": "^4.14.0"
+    "express": "^4.14.0",
+    "http": "0.0.0"
   }
 }
