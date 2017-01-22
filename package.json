@@ -16,6 +16,7 @@
   "homepage": "https://github.com/DeepanS206/PennCourseMaterials#readme",
   "dependencies": {
     "body-parser": "^1.16.0",
+    "cookie-session": "^1.2.0",
     "ejs": "^2.5.5",
     "express": "^4.14.0",
     "http": "0.0.0",

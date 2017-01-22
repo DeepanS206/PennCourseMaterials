@@ -5,6 +5,14 @@ var cookieSession = require('cookie-session');
 var mongodb = require('./models/app.js'); 
 var app = express();
 
+var generateCookieSecret = function () {
+  return 'iamasecret' + uuid.v4();
+};
+
+app.use(cookieSession({
+  secret: generateCookieSecret()
+})); 
+
 app.use(bodyParser.urlencoded({
     extended: true
 }));
